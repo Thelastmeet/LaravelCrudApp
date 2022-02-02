@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Users;
+use App\Http\Controllers\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +14,11 @@ use App\Http\Controllers\Users;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 /*Route::get("Enterpathname",[define controller class,'define function']");*/
 
-Route::get('Users/{user}',[Users::Class,'index']);  /*register a route and pass data from controller */
+Route::get('/', function () {
+    return redirect('shareprice');
+});
+Route::get("shareprice",[UsersController::class,'index']);
