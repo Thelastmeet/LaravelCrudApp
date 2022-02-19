@@ -20,6 +20,7 @@ class RestroController extends Controller
         $data = Restaurants::all();
         return view('list', ["data" => $data]);
     }
+
     public function add(Request $req)
     {
         $restro = new Restaurants;
@@ -38,6 +39,7 @@ class RestroController extends Controller
         return redirect()->back()->with('status','Deleted Successfully');
 
     }
+
     public function edit($id)
     {
 
@@ -45,9 +47,9 @@ class RestroController extends Controller
         //dd($data);
         return view('edit', ['data' => $data]);
     }
+
     public function update(Request $request, $id)
     {
-            dd($id);
         $data = Restaurants::find($id);
         $data->name = $request->input('name');
         $data->email = $request->input('email');

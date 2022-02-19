@@ -2,8 +2,8 @@
 @section('content')
 
     <div class="col-sm-3">
-        <form method="post" action="{{ url('update', [$data->id])}}">
-            <input type="hidden" name="_method" value="PUT">
+        <form method="post" action="{{ url('update', [$data->id])}}" enctype="multipart/form-data">
+            {{method_field('put')}}
             @csrf
 
 
